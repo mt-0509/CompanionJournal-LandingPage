@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CompanionJournal | 1日3行で、心の輪郭が見えてくる。</title>
+  <meta name="description" content="AIが3行日記をやさしく分析し、感情や思考の気づきを返してくれる日記アプリ CompanionJournal" />
+  <meta name="theme-color" content="#f0f6ff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            softBlue: '#e9f3ff',
+            softBlue2: '#d7e9fa',
+            calm: '#5b7fa3'
+          },
+          fontFamily: { inter: ['Inter','system-ui','sans-serif'] },
+          boxShadow: { glow: '0 0 0 3px rgba(147,197,253,0.4)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    .fade-in { opacity:1 !important; transform:translateY(0) !important; }
+  </style>
+</head>
+<body class="font-inter bg-gradient-to-b from-white via-softBlue to-white text-gray-800 antialiased">
+  <!-- Navigation -->
+  <header class="sticky top-0 backdrop-blur bg-white/70 border-b border-softBlue2 z-40">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-calm to-sky-400 flex items-center justify-center text-white font-semibold shadow-sm" aria-hidden="true">CJ</div>
+        <span class="font-semibold text-calm">CompanionJournal</span>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#about-3lines" class="hover:text-calm transition-colors">3行日記とは</a>
+        <a href="#ai" class="hover:text-calm transition-colors">AI分析</a>
+        <a href="#features" class="hover:text-calm transition-colors">続く工夫</a>
+        <a href="#voices" class="hover:text-calm transition-colors">ユーザーの声</a>
+        <a href="#pricing" class="hover:text-calm transition-colors">料金</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button data-scroll="#download" class="hidden sm:inline-flex bg-calm/90 hover:bg-calm text-white text-sm font-medium px-4 py-2 rounded-lg shadow transition focus:outline-none focus:ring-2 focus:ring-sky-300">今すぐ試す</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-20 pb-24" id="hero">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6" data-animate>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-calm">
+          1日3行で、<br class="sm:hidden">あなたの心が見えてくる。
+        </h1>
+        <p class="text-lg text-gray-700 leading-relaxed">CompanionJournalは、たった3行の日記をAIがやさしく分析し、感情の流れや思考のクセ、変化の芽をそっと教えてくれる“寄り添う”ジャーナルアプリです。忙しくても、続かなくても、大丈夫。ほんの数十秒で積み上がるあなたの心の軌跡。</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://apps.apple.com/jp/app/placeholder" target="_blank" rel="noopener" class="inline-flex rounded-xl focus:outline-none focus:ring-2 focus:ring-calm" aria-label="App Storeでダウンロード">
+            <img src="assets/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeでダウンロード" class="h-10 w-auto select-none" loading="lazy" decoding="async" />
+          </a>
+          <button data-scroll="#about-3lines" class="px-6 py-3 rounded-xl bg-white border border-softBlue2 text-calm font-medium shadow-sm hover:shadow transition focus:outline-none focus:ring-2 focus:ring-calm/40">しくみを見る</button>
+        </div>
+        <p class="text-sm text-gray-500">※ 画像・一部UIは開発中のイメージです。</p>
+      </div>
+      <div class="relative" data-animate>
+        <div class="w-full aspect-[3/4] rounded-3xl bg-white border border-softBlue2 shadow-lg flex items-center justify-center overflow-hidden">
+          <div class="text-center p-6">
+            <div class="w-40 h-40 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-sky-200 to-sky-400 animate-pulse"></div>
+            <p class="text-calm font-semibold mb-2">アプリ画面モック</p>
+            <p class="text-sm text-gray-500 leading-relaxed">ここに実際のスクリーンショットが入ります。AI分析結果や日記入力UIが表示されます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3行日記とは -->
+  <section id="about-3lines" class="py-20 bg-white/70" aria-labelledby="heading-3lines">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="mb-10" data-animate>
+        <h2 id="heading-3lines" class="text-2xl sm:text-3xl font-bold text-calm mb-4">3行日記とは？</h2>
+        <p class="text-gray-700 leading-relaxed">“今日よかったこと”“気になったこと”“ひとこと自由”など、たった3つの短いフレームに思考を落とし込むことで、心の動きを過度に整理しすぎずに残せるシンプルな習慣です。</p>
+      </div>
+      <ul class="grid sm:grid-cols-3 gap-6" data-animate>
+        <li class="p-6 rounded-xl bg-softBlue shadow-sm border border-softBlue2">
+          <p class="font-semibold text-calm mb-2">続けやすい</p>
+          <p class="text-sm text-gray-700 leading-relaxed">60秒で書ける設計。完璧を求めず“積み上げる”だけ。</p>
+        </li>
+        <li class="p-6 rounded-xl bg-softBlue shadow-sm border border-softBlue2">
+          <p class="font-semibold text-calm mb-2">偏りが見える</p>
+          <p class="text-sm text-gray-700 leading-relaxed">毎日の3行が並び、気分の波や視点の癖が浮かび上がる。</p>
+        </li>
+        <li class="p-6 rounded-xl bg-softBlue shadow-sm border border-softBlue2">
+          <p class="font-semibold text-calm mb-2">余白がある</p>
+          <p class="text-sm text-gray-700 leading-relaxed">詳細を書きすぎないから“あとでAIが補助”しやすい。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AI分析機能 -->
+  <section id="ai" class="py-20" aria-labelledby="heading-ai">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-12" data-animate>
+        <h2 id="heading-ai" class="text-2xl sm:text-3xl font-bold text-calm mb-4">AI分析は“そっと寄り添う”</h2>
+        <p class="text-gray-700 leading-relaxed">CompanionJournalのAIは、評価や断定ではなく気づきのきっかけを提供する伴走者。日記の言葉からやさしく傾向をまとめ、心の栄養になりそうな視点を返します。</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8" data-animate>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">感情分析</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">日記の語感から主な感情トーンを推定。繰り返し現れる感情の波に気づけます。</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">ポジ/ネガ傾向</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">前向き／ネガティブな記述のバランスを可視化し“今週どんな視点だった？”を振り返り。</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">習慣の気づき</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">繰り返し登場する行動・人・場所を提示。あなたの“エネルギー源”や“負荷要因”が見えてくる。</p>
+        </div>
+      </div>
+      <div class="mt-12" data-animate>
+        <div class="p-8 rounded-3xl bg-gradient-to-r from-softBlue via-white to-softBlue2 border border-softBlue2 shadow-sm">
+          <p class="text-calm font-medium mb-2">寄り添いメッセージ例</p>
+          <p class="text-gray-700 text-sm leading-relaxed">“今週は『疲れた』が少し増えています。休める予定を一つだけ確保できると回復しやすそう。先週あなたが『楽しかった』と書いた散歩、また行けそうですか？”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 続くための工夫 -->
+  <section id="features" class="py-20 bg-white/70" aria-labelledby="heading-features">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-12" data-animate>
+        <h2 id="heading-features" class="text-2xl sm:text-3xl font-bold text-calm mb-4">続くためのやさしい工夫</h2>
+        <p class="text-gray-700 leading-relaxed">“書けなかった日”を責めず、“書けた日”をそっと積み上げる設計。習慣のハードルを下げました。</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8" data-animate>
+        <div class="p-6 rounded-2xl bg-softBlue shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">書きやすいUI</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">入力枠は3つだけ。文字数ガイドと“書けたらOK”の軽さ。</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-softBlue shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">プッシュ通知</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">“そろそろ今日を言葉にしませんか？”という柔らかいリマインド。</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-softBlue shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">カレンダー表示</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">埋まっていく日付が小さな達成感に。感情の色分けで流れが見える。</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-softBlue shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">自己の積み上がり</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">後から読むと“あの頃こう感じてたんだ”の解像度が増すタイムライン。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ユーザーの声 -->
+  <section id="voices" class="py-20" aria-labelledby="heading-voices">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-12" data-animate>
+        <h2 id="heading-voices" class="text-2xl sm:text-3xl font-bold text-calm mb-4">ユーザーの声（架空）</h2>
+        <p class="text-gray-700 leading-relaxed">効果や安心感が伝わるフィードバック例です。</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8" data-animate>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2 flex flex-col">
+          <p class="text-sm text-gray-700 flex-1 leading-relaxed">“日記は毎回長く書こうとして挫折していました。ここでは3行だけなので気楽。AIのコメントが優しくて週末の休息を意識できました。”</p>
+          <p class="mt-4 text-xs text-gray-500">会社員 / 29歳</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2 flex flex-col">
+          <p class="text-sm text-gray-700 flex-1 leading-relaxed">“ストレス溜まってる時ほど書けなくなるのですが、アプリが『最近緊張ワードが増えてます』と教えてくれて早めに深呼吸。”</p>
+          <p class="mt-4 text-xs text-gray-500">大学院生 / 24歳</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2 flex flex-col">
+          <p class="text-sm text-gray-700 flex-1 leading-relaxed">“自分のポジティブな記述が意外と多いことに気づきました。自己評価が少しやわらいだ感じ。”</p>
+          <p class="mt-4 text-xs text-gray-500">フリーランス / 34歳</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金 -->
+  <section id="pricing" class="py-20 bg-white/70" aria-labelledby="heading-pricing">
+    <div class="max-w-4xl mx-auto px-4" data-animate>
+      <h2 id="heading-pricing" class="text-2xl sm:text-3xl font-bold text-calm mb-6">料金</h2>
+      <div class="p-8 rounded-3xl bg-gradient-to-br from-softBlue to-white border border-softBlue2 shadow-sm">
+        <p class="text-gray-700 leading-relaxed mb-4">まずは無料で気軽にスタートできます。感情トレンドの詳細グラフや長期比較など、より深い分析はサブスク（無料トライアルあり）で開放。</p>
+        <div class="grid sm:grid-cols-3 gap-6 mt-4">
+          <div class="p-4 rounded-xl bg-white shadow-sm border border-softBlue2">
+            <p class="font-semibold text-calm mb-1">Free</p>
+            <p class="text-xs text-gray-600">3行記録 / 基本AIコメント</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white shadow-sm border border-softBlue2">
+            <p class="font-semibold text-calm mb-1">Plus</p>
+            <p class="text-xs text-gray-600">詳細感情トレンド / 習慣深掘り</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white shadow-sm border border-softBlue2">
+            <p class="font-semibold text-calm mb-1">Trial</p>
+            <p class="text-xs text-gray-600">7日間無料トライアル</p>
+          </div>
+        </div>
+        <div class="mt-6 flex flex-col sm:flex-row gap-4">
+          <button data-scroll="#download" class="px-6 py-3 bg-calm text-white rounded-xl font-medium shadow hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-calm/50">まずは書いてみる</button>
+          <a href="#faq" class="px-6 py-3 bg-white text-calm border border-softBlue2 rounded-xl font-medium shadow-sm hover:shadow transition focus:outline-none focus:ring-2 focus:ring-calm/40">よくある質問 (準備中)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="download" class="py-24" aria-labelledby="heading-download">
+    <div class="max-w-4xl mx-auto px-4 text-center" data-animate>
+      <h2 id="heading-download" class="text-3xl font-bold text-calm mb-6">小さな3行から、やさしい自己理解を。</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto leading-relaxed mb-8">今日のことばを少しだけ残してみませんか？明日のあなたへ、穏やかなヒントを手渡す最初の一歩を。</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://apps.apple.com/jp/app/placeholder" target="_blank" rel="noopener" class="inline-flex rounded-2xl focus:outline-none focus:ring-2 focus:ring-calm" aria-label="App Storeでダウンロード">
+          <img src="assets/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="App Storeでダウンロード" class="h-12 w-auto select-none" loading="lazy" decoding="async" />
+        </a>
+        <button data-scroll="#hero" class="px-8 py-4 rounded-2xl bg-white border border-softBlue2 text-calm font-medium shadow-sm hover:shadow transition focus:outline-none focus:ring-2 focus:ring-calm/40">最初の3行って？</button>
+      </div>
+      <p class="text-xs text-gray-500 mt-6">※ 本ページはプロトタイプです。正式リリース時に内容が変わる可能性があります。</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-white/80 border-t border-softBlue2">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-8 md:gap-0 md:items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-calm to-sky-400 flex items-center justify-center text-white text-sm font-semibold">CJ</div>
+        <span class="font-medium text-calm">CompanionJournal</span>
+      </div>
+      <nav class="flex gap-6 text-sm text-gray-600">
+        <a href="#hero" class="hover:text-calm">トップ</a>
+        <a href="#ai" class="hover:text-calm">AI分析</a>
+        <a href="#pricing" class="hover:text-calm">料金</a>
+        <a href="#download" class="hover:text-calm">ダウンロード</a>
+      </nav>
+      <p class="text-xs text-gray-500">© 2025 CompanionJournal. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Smooth scroll for elements with data-scroll
+    document.querySelectorAll('[data-scroll]').forEach(el => {
+      el.addEventListener('click', e => {
+        const target = el.getAttribute('data-scroll');
+        if (target) {
+          const node = document.querySelector(target);
+          if (node) {
+            e.preventDefault();
+            node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // Intersection animations
+    const animated = document.querySelectorAll('[data-animate]');
+    animated.forEach(el => {
+      el.classList.add('opacity-0','translate-y-4','transition','duration-700');
+    });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, { threshold: 0.15 });
+    animated.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

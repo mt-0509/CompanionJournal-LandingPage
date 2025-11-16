@@ -1,0 +1,9 @@
+# macOSが自動作成するファイル
+.DS_Store
+
+# Git管理したくないLPの作業ファイル
+*.bak
+*.tmp
+
+# VS Codeの設定ファイル (任意)
+.vscode/
