@@ -6,6 +6,7 @@
   <title>CompanionJournal | 1日3行で、心の輪郭が見えてくる。</title>
   <meta name="description" content="AIが3行日記をやさしく分析し、感情や思考の気づきを返してくれる日記アプリ CompanionJournal" />
   <meta name="theme-color" content="#f0f6ff" />
+  <link rel="icon" type="image/png" href="assets/companionjournal-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,7 +35,7 @@
   <header class="sticky top-0 backdrop-blur bg-white/70 border-b border-softBlue2 z-40">
     <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
       <div class="flex items-center gap-2">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-calm to-sky-400 flex items-center justify-center text-white font-semibold shadow-sm" aria-hidden="true">CJ</div>
+        <img src="assets/companionjournal-logo.png" alt="CompanionJournal ロゴ" class="w-9 h-9 rounded-xl shadow-sm" width="36" height="36" decoding="async" />
         <span class="font-semibold text-calm">CompanionJournal</span>
       </div>
       <nav class="hidden md:flex gap-6 text-sm font-medium">
@@ -43,6 +44,7 @@
         <a href="#features" class="hover:text-calm transition-colors">続く工夫</a>
         <a href="#voices" class="hover:text-calm transition-colors">ユーザーの声</a>
         <a href="#pricing" class="hover:text-calm transition-colors">料金</a>
+        <a href="#contact" class="hover:text-calm transition-colors">お問い合わせ</a>
       </nav>
       <div class="flex items-center gap-3">
         <button data-scroll="#download" class="hidden sm:inline-flex bg-calm/90 hover:bg-calm text-white text-sm font-medium px-4 py-2 rounded-lg shadow transition focus:outline-none focus:ring-2 focus:ring-sky-300">今すぐ試す</button>
@@ -67,13 +69,40 @@
         <p class="text-sm text-gray-500">※ 画像・一部UIは開発中のイメージです。</p>
       </div>
       <div class="relative" data-animate>
-        <div class="w-full aspect-[3/4] rounded-3xl bg-white border border-softBlue2 shadow-lg flex items-center justify-center overflow-hidden">
-          <div class="text-center p-6">
-            <div class="w-40 h-40 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-sky-200 to-sky-400 animate-pulse"></div>
-            <p class="text-calm font-semibold mb-2">アプリ画面モック</p>
-            <p class="text-sm text-gray-500 leading-relaxed">ここに実際のスクリーンショットが入ります。AI分析結果や日記入力UIが表示されます。</p>
-          </div>
+        <div class="w-full aspect-[3/4] rounded-[2.5rem] bg-gradient-to-br from-white via-softBlue to-white border border-softBlue2 shadow-xl flex items-center justify-center overflow-hidden">
+          <img src="assets/Simulator Screenshot - iPhone 17 Pro - 2025-11-24 at 21.48.07.png" alt="CompanionJournal 日記入力画面のスクリーンショット" class="w-11/12 h-auto max-h-full object-contain drop-shadow-[0_20px_60px_rgba(91,127,163,0.35)]" loading="lazy" decoding="async" />
         </div>
+        <div class="hidden sm:block absolute -left-6 top-8 w-32 rounded-2xl bg-white/70 border border-softBlue2 shadow-lg backdrop-blur p-2 rotate-[-6deg]">
+          <img src="assets/Simulator Screenshot - iPhone 17 Pro - 2025-11-24 at 21.41.07.png" alt="AIコメント画面のスクリーンショット" class="rounded-xl" loading="lazy" decoding="async" />
+        </div>
+        <div class="hidden sm:block absolute -right-6 bottom-6 w-32 rounded-2xl bg-white/70 border border-softBlue2 shadow-lg backdrop-blur p-2 rotate-[5deg]">
+          <img src="assets/Simulator Screenshot - iPhone 17 Pro - 2025-11-24 at 21.47.53.png" alt="感情分析ビューのスクリーンショット" class="rounded-xl" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshot gallery -->
+  <section id="screens" class="py-20 bg-white/80" aria-labelledby="heading-screens">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-10 text-center" data-animate>
+        <p class="text-sm font-semibold tracking-[0.2em] text-calm uppercase">Preview</p>
+        <h2 id="heading-screens" class="text-2xl sm:text-3xl font-bold text-calm mt-3">アプリのスクリーンショット</h2>
+        <p class="text-gray-700 mt-4 leading-relaxed">日記入力・AI分析・リフレクションの3つの画面を実際のイメージでご覧いただけます。</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3" data-animate>
+        <figure class="rounded-3xl bg-gradient-to-b from-white to-softBlue border border-softBlue2 shadow-lg p-4 flex flex-col gap-4">
+          <img src="assets/Simulator Screenshot - iPhone 17 Pro - 2025-11-24 at 21.48.00.png" alt="日記入力画面" class="rounded-2xl object-contain" loading="lazy" decoding="async" />
+          <figcaption class="text-center text-sm text-gray-600">3行をサッと書ける日記入力UI</figcaption>
+        </figure>
+        <figure class="rounded-3xl bg-gradient-to-b from-white to-softBlue border border-softBlue2 shadow-lg p-4 flex flex-col gap-4">
+          <img src="assets/Simulator Screenshot - iPhone 17 Pro - 2025-11-24 at 21.57.01.png" alt="AIコメント画面" class="rounded-2xl object-contain" loading="lazy" decoding="async" />
+          <figcaption class="text-center text-sm text-gray-600">AIがやさしく寄り添うコメント</figcaption>
+        </figure>
+        <figure class="rounded-3xl bg-gradient-to-b from-white to-softBlue border border-softBlue2 shadow-lg p-4 flex flex-col gap-4">
+          <img src="assets/Simulator Screenshot - iPhone 17 Pro - 2025-11-24 at 21.48.07.png" alt="感情ハイライト画面" class="rounded-2xl object-contain" loading="lazy" decoding="async" />
+          <figcaption class="text-center text-sm text-gray-600">感情の流れとキーワードの可視化</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -189,7 +218,7 @@
     <div class="max-w-4xl mx-auto px-4" data-animate>
       <h2 id="heading-pricing" class="text-2xl sm:text-3xl font-bold text-calm mb-6">料金</h2>
       <div class="p-8 rounded-3xl bg-gradient-to-br from-softBlue to-white border border-softBlue2 shadow-sm">
-        <p class="text-gray-700 leading-relaxed mb-4">まずは無料で気軽にスタートできます。感情トレンドの詳細グラフや長期比較など、より深い分析はサブスク（無料トライアルあり）で開放。</p>
+        <p class="text-gray-700 leading-relaxed mb-4">基本の3行記録とAIコメントは無料で利用できます。テーマカラーのカスタマイズや日記データのPDF / CSV出力といった有料機能は、サブスクプラン（7日間の無料トライアル付き）でご利用いただけます。</p>
         <div class="grid sm:grid-cols-3 gap-6 mt-4">
           <div class="p-4 rounded-xl bg-white shadow-sm border border-softBlue2">
             <p class="font-semibold text-calm mb-1">Free</p>
@@ -197,11 +226,11 @@
           </div>
           <div class="p-4 rounded-xl bg-white shadow-sm border border-softBlue2">
             <p class="font-semibold text-calm mb-1">Plus</p>
-            <p class="text-xs text-gray-600">詳細感情トレンド / 習慣深掘り</p>
+            <p class="text-xs text-gray-600">テーマカラー変更 / PDF・CSV出力</p>
           </div>
           <div class="p-4 rounded-xl bg-white shadow-sm border border-softBlue2">
             <p class="font-semibold text-calm mb-1">Trial</p>
-            <p class="text-xs text-gray-600">7日間無料トライアル</p>
+            <p class="text-xs text-gray-600">有料機能を7日間お試し</p>
           </div>
         </div>
         <div class="mt-6 flex flex-col sm:flex-row gap-4">
@@ -227,11 +256,29 @@
     </div>
   </section>
 
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-white" aria-labelledby="heading-contact">
+    <div class="max-w-4xl mx-auto px-4 text-center" data-animate>
+      <p class="text-sm font-semibold tracking-[0.3em] text-calm uppercase mb-3">Contact</p>
+      <h2 id="heading-contact" class="text-2xl sm:text-3xl font-bold text-calm mb-4">お問い合わせ</h2>
+      <p class="text-gray-700 leading-relaxed mb-8">
+        <span class="block">アプリの機能に関する疑問やご意見・ご要望は、以下のメールアドレスまでお気軽にご連絡ください。</span>
+        <span class="block mt-3">3営業日程度での返信を目安としております。</span>
+      </p>
+      <div class="inline-flex flex-col gap-3 items-center">
+        <a href="mailto:remonent59+CompanionJournalSupport@gmail.com" class="inline-flex items-center gap-2 px-7 py-4 rounded-2xl bg-calm text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-calm" aria-label="メールで問い合わせる">
+          <span>メールで問い合わせる</span>
+        </a>
+        <p class="text-xs text-gray-500">※ メールクライアントが起動しない場合は <span class="font-mono text-gray-600">remonent59+CompanionJournalSupport@gmail.com</span> をコピーしてご利用ください。</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="py-12 bg-white/80 border-t border-softBlue2">
     <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-8 md:gap-0 md:items-center justify-between">
       <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-calm to-sky-400 flex items-center justify-center text-white text-sm font-semibold">CJ</div>
+        <img src="assets/companionjournal-logo.png" alt="CompanionJournal ロゴ" class="w-8 h-8 rounded-xl shadow-sm" width="32" height="32" decoding="async" />
         <span class="font-medium text-calm">CompanionJournal</span>
       </div>
       <nav class="flex gap-6 text-sm text-gray-600">
@@ -239,6 +286,7 @@
         <a href="#ai" class="hover:text-calm">AI分析</a>
         <a href="#pricing" class="hover:text-calm">料金</a>
         <a href="#download" class="hover:text-calm">ダウンロード</a>
+        <a href="#contact" class="hover:text-calm">お問い合わせ</a>
       </nav>
       <p class="text-xs text-gray-500">© 2025 CompanionJournal. All rights reserved.</p>
     </div>
