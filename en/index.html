@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Companion Journal | AI × 3-Line Journal</title>
+  <meta name="description" content="Companion Journal (AI × 3-Line Journal) is a journaling app that gently analyzes your three lines and reflects back emotional and cognitive insights." />
+  <meta name="theme-color" content="#f0f6ff" />
+  <link rel="icon" type="image/png" href="assets/companionjournal-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            softBlue: '#e9f3ff',
+            softBlue2: '#d7e9fa',
+            calm: '#5b7fa3'
+          },
+          fontFamily: { inter: ['Inter','system-ui','sans-serif'] },
+          boxShadow: { glow: '0 0 0 3px rgba(147,197,253,0.4)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    .fade-in { opacity:1 !important; transform:translateY(0) !important; }
+  </style>
+</head>
+<body class="font-inter bg-gradient-to-b from-white via-softBlue to-white text-gray-800 antialiased">
+  <!-- Navigation -->
+  <header class="sticky top-0 backdrop-blur bg-white/70 border-b border-softBlue2 z-40">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+      <div class="flex items-center gap-2">
+        <img src="assets/companionjournal-logo.png" alt="Companion Journal logo" class="w-9 h-9 rounded-xl shadow-sm" width="36" height="36" decoding="async" />
+        <span class="font-semibold text-calm">Companion Journal</span>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#about-3lines" class="hover:text-calm transition-colors">What is a 3-line journal?</a>
+        <a href="#ai" class="hover:text-calm transition-colors">AI insights</a>
+        <a href="#features" class="hover:text-calm transition-colors">Designed to keep going</a>
+        <a href="#voices" class="hover:text-calm transition-colors">Voices</a>
+        <a href="#contact" class="hover:text-calm transition-colors">Contact</a>
+        <a href="terms.html" class="hover:text-calm transition-colors">Terms</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="../jp/index.html" class="inline-flex items-center px-3 py-2 rounded-lg border border-softBlue2 text-calm text-sm font-medium hover:bg-white shadow-sm transition" aria-label="Switch to Japanese">日本語</a>
+        <button data-scroll="#download" class="hidden sm:inline-flex bg-calm/90 hover:bg-calm text-white text-sm font-medium px-4 py-2 rounded-lg shadow transition focus:outline-none focus:ring-2 focus:ring-sky-300">Try it now</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-20 pb-24" id="hero">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6" data-animate>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-calm">
+          In three lines a day,<br class="sm:hidden">your mind becomes clearer.
+        </h1>
+        <p class="text-lg text-gray-700 leading-relaxed">Companion Journal (AI × 3-Line Journal) gently analyzes just three short lines and reflects back your emotional flow, thought patterns, and small signs of change—like a journal that stays close to you. Busy days are okay. Inconsistent days are okay. In a few dozen seconds, you can build a quiet trace of your inner life.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://apps.apple.com/app/id6755328901" target="_blank" rel="noopener" class="inline-flex rounded-xl focus:outline-none focus:ring-2 focus:ring-calm" aria-label="Download on the App Store">
+            <img src="assets/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="Download on the App Store" class="h-10 w-auto select-none" loading="lazy" decoding="async" />
+          </a>
+          <button data-scroll="#about-3lines" class="px-6 py-3 rounded-xl bg-white border border-softBlue2 text-calm font-medium shadow-sm hover:shadow transition focus:outline-none focus:ring-2 focus:ring-calm/40">See how it works</button>
+        </div>
+      </div>
+      <div class="relative" data-animate>
+        <div class="w-full aspect-[3/4] rounded-[2.5rem] bg-gradient-to-br from-white via-softBlue to-white border border-softBlue2 shadow-xl flex items-center justify-center overflow-hidden">
+          <img src="assets/ホーム画面_入力済み_en.png" alt="Companion Journal journal entry screen screenshot" class="w-11/12 h-auto max-h-full object-contain drop-shadow-[0_20px_60px_rgba(91,127,163,0.35)]" loading="lazy" decoding="async" />
+        </div>
+        <div class="hidden sm:block absolute -left-6 top-8 w-32 rounded-2xl bg-white/70 border border-softBlue2 shadow-lg backdrop-blur p-2 rotate-[-6deg]">
+          <img src="assets/ホーム画面_未入力_en.png" alt="AI comment screen screenshot" class="rounded-xl" loading="lazy" decoding="async" />
+        </div>
+        <div class="hidden sm:block absolute -right-6 bottom-6 w-32 rounded-2xl bg-white/70 border border-softBlue2 shadow-lg backdrop-blur p-2 rotate-[5deg]">
+          <img src="assets/気分選択_en.png" alt="Emotion analysis view screenshot" class="rounded-xl" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshot gallery -->
+  <section id="screens" class="py-20 bg-white/80" aria-labelledby="heading-screens">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-10 text-center" data-animate>
+        <p class="text-sm font-semibold tracking-[0.2em] text-calm uppercase">Preview</p>
+        <h2 id="heading-screens" class="text-2xl sm:text-3xl font-bold text-calm mt-3">App screenshots</h2>
+        <p class="text-gray-700 mt-4 leading-relaxed">See real screen examples for journaling, AI insights, and reflection.</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3" data-animate>
+        <figure class="rounded-3xl bg-gradient-to-b from-white to-softBlue border border-softBlue2 shadow-lg p-4 flex flex-col gap-4">
+          <img src="assets/ホーム画面_入力済み_en.png" alt="Journal entry screen" class="rounded-2xl object-contain" loading="lazy" decoding="async" />
+          <figcaption class="text-center text-sm text-gray-600">A journal UI you can complete in three lines</figcaption>
+        </figure>
+        <figure class="rounded-3xl bg-gradient-to-b from-white to-softBlue border border-softBlue2 shadow-lg p-4 flex flex-col gap-4">
+          <img src="assets/分析結果_en.png" alt="AI comment screen" class="rounded-2xl object-contain" loading="lazy" decoding="async" />
+          <figcaption class="text-center text-sm text-gray-600">Gentle, supportive AI comments</figcaption>
+        </figure>
+        <figure class="rounded-3xl bg-gradient-to-b from-white to-softBlue border border-softBlue2 shadow-lg p-4 flex flex-col gap-4">
+          <img src="assets/CURRENT STREAK_en.png" alt="Emotion highlight screen" class="rounded-2xl object-contain" loading="lazy" decoding="async" />
+          <figcaption class="text-center text-sm text-gray-600">Progress you can see</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is a 3-line journal -->
+  <section id="about-3lines" class="py-20 bg-white/70" aria-labelledby="heading-3lines">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="mb-10" data-animate>
+        <h2 id="heading-3lines" class="text-2xl sm:text-3xl font-bold text-calm mb-4">What is a 3-line journal?</h2>
+        <p class="text-gray-700 leading-relaxed">By fitting your day into just three short prompts—like “something that went well,” “something on your mind,” and “one free line”—you can capture movement in your feelings without over-organizing it. A simple habit that leaves just enough space.</p>
+      </div>
+      <ul class="grid sm:grid-cols-3 gap-6" data-animate>
+        <li class="p-6 rounded-xl bg-softBlue shadow-sm border border-softBlue2">
+          <p class="font-semibold text-calm mb-2">Easy to keep</p>
+          <p class="text-sm text-gray-700 leading-relaxed">Designed to be done in 60 seconds. No perfection—just small accumulation.</p>
+        </li>
+        <li class="p-6 rounded-xl bg-softBlue shadow-sm border border-softBlue2">
+          <p class="font-semibold text-calm mb-2">Patterns become visible</p>
+          <p class="text-sm text-gray-700 leading-relaxed">Your daily lines line up over time, revealing mood waves and perspective habits.</p>
+        </li>
+        <li class="p-6 rounded-xl bg-softBlue shadow-sm border border-softBlue2">
+          <p class="font-semibold text-calm mb-2">Room to breathe</p>
+          <p class="text-sm text-gray-700 leading-relaxed">Because you don’t write too much, it’s easier for AI to support reflection later.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AI features -->
+  <section id="ai" class="py-20" aria-labelledby="heading-ai">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-12" data-animate>
+        <h2 id="heading-ai" class="text-2xl sm:text-3xl font-bold text-calm mb-4">AI insights that “stay gentle”</h2>
+        <p class="text-gray-700 leading-relaxed">Companion Journal’s AI isn’t here to judge or label you—it’s a companion that offers prompts for noticing. It summarizes soft tendencies from your words and returns perspectives that can nourish your mind.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8" data-animate>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">Emotion analysis</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">Estimates your primary emotional tone from your phrasing. Helps you notice recurring emotional waves.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">Positive/negative balance</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">Visualizes the balance of upbeat vs. negative expressions so you can reflect: “What lens did I have this week?”</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">Habit awareness</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">Highlights repeated actions, people, and places. Your energy sources and stressors become clearer.</p>
+        </div>
+      </div>
+      <div class="mt-12" data-animate>
+        <div class="p-8 rounded-3xl bg-gradient-to-r from-softBlue via-white to-softBlue2 border border-softBlue2 shadow-sm">
+          <p class="text-calm font-medium mb-2">Example of a supportive message</p>
+          <p class="text-gray-700 text-sm leading-relaxed">“This week, the word ‘tired’ appears a bit more often. If you can reserve just one small window to rest, recovery may come easier. You wrote ‘it was fun’ about taking a walk last week—could you fit in another short walk?”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 bg-white/70" aria-labelledby="heading-features">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-12" data-animate>
+        <h2 id="heading-features" class="text-2xl sm:text-3xl font-bold text-calm mb-4">Gentle features to help you continue</h2>
+        <p class="text-gray-700 leading-relaxed">Designed to never blame “days you couldn’t write,” and to quietly stack “days you did.” We lowered the barrier to making it a habit.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8" data-animate>
+        <div class="p-6 rounded-2xl bg-softBlue shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">A UI that’s easy to write in</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">Only three input boxes. Light guidance on length, and an “if you wrote it, it counts” feel.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-softBlue shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">Push notifications</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">A soft reminder like: “Want to put today into words?”</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-softBlue shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">Calendar view</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">Watching days fill in creates small wins. Color-coding emotions helps you see your flow.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-softBlue shadow-sm border border-softBlue2">
+          <h3 class="font-semibold text-calm mb-2">Your self accumulates</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">A timeline that increases clarity when you reread: “Oh, that’s how I felt back then.”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voices -->
+  <section id="voices" class="py-20" aria-labelledby="heading-voices">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-12" data-animate>
+        <h2 id="heading-voices" class="text-2xl sm:text-3xl font-bold text-calm mb-4">What users say</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8" data-animate>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2 flex flex-col">
+          <p class="text-sm text-gray-700 flex-1 leading-relaxed">“I used to quit because I tried to write long entries every time. Here it’s just three lines, so it feels easy. The AI comments were gentle, and I started paying attention to resting on weekends.”</p>
+          <p class="mt-4 text-xs text-gray-500">Office worker / 29</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2 flex flex-col">
+          <p class="text-sm text-gray-700 flex-1 leading-relaxed">“The more stressed I am, the harder it is to write. The app told me ‘words related to tension are increasing lately,’ and that helped me take a deep breath earlier.”</p>
+          <p class="mt-4 text-xs text-gray-500">Graduate student / 24</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white shadow-sm border border-softBlue2 flex flex-col">
+          <p class="text-sm text-gray-700 flex-1 leading-relaxed">“I realized I write more positive things than I expected. It softened my self-criticism a little.”</p>
+          <p class="mt-4 text-xs text-gray-500">Freelancer / 34</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="download" class="py-24" aria-labelledby="heading-download">
+    <div class="max-w-4xl mx-auto px-4 text-center" data-animate>
+      <h2 id="heading-download" class="text-3xl font-bold text-calm mb-6">From three small lines to gentle self-understanding.</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto leading-relaxed mb-8">Want to leave a tiny trace of today’s words? A calm hint for tomorrow’s you can start right here.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://apps.apple.com/app/id6755328901" target="_blank" rel="noopener" class="inline-flex rounded-2xl focus:outline-none focus:ring-2 focus:ring-calm" aria-label="Download on the App Store">
+          <img src="assets/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="Download on the App Store" class="h-12 w-auto select-none" loading="lazy" decoding="async" />
+        </a>
+        <button data-scroll="#hero" class="px-8 py-4 rounded-2xl bg-white border border-softBlue2 text-calm font-medium shadow-sm hover:shadow transition focus:outline-none focus:ring-2 focus:ring-calm/40">What’s a 3-line journal?</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-white" aria-labelledby="heading-contact">
+    <div class="max-w-4xl mx-auto px-4 text-center" data-animate>
+      <p class="text-sm font-semibold tracking-[0.3em] text-calm uppercase mb-3">Contact</p>
+      <h2 id="heading-contact" class="text-2xl sm:text-3xl font-bold text-calm mb-4">Contact us</h2>
+      <p class="text-gray-700 leading-relaxed mb-8">
+        <span class="block">If you have questions, feedback, or feature requests, feel free to email us at the address below.</span>
+        <span class="block mt-3">We typically reply within about 3 business days.</span>
+      </p>
+      <div class="inline-flex flex-col gap-3 items-center">
+        <a href="mailto:remonent59+CompanionJournalSupport@gmail.com" class="inline-flex items-center gap-2 px-7 py-4 rounded-2xl bg-calm text-white font-semibold shadow-lg hover:shadow-xl transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-calm" aria-label="Contact via email">
+          <span>Email us</span>
+        </a>
+        <p class="text-xs text-gray-500">If your mail client doesn’t open, copy <span class="font-mono text-gray-600">remonent59+CompanionJournalSupport@gmail.com</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-white/80 border-t border-softBlue2">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-8 md:gap-0 md:items-center justify-between">
+      <div class="flex items-center gap-2">
+        <img src="assets/companionjournal-logo.png" alt="Companion Journal (AI × 3-Line Journal) logo" class="w-8 h-8 rounded-xl shadow-sm" width="32" height="32" decoding="async" />
+        <span class="font-medium text-calm">Companion Journal (AI × 3-Line Journal)</span>
+      </div>
+      <nav class="flex gap-6 text-sm text-gray-600">
+        <a href="#hero" class="hover:text-calm">Top</a>
+        <a href="#ai" class="hover:text-calm">AI</a>
+        <a href="#download" class="hover:text-calm">Download</a>
+        <a href="#contact" class="hover:text-calm">Contact</a>
+        <a href="terms.html" class="hover:text-calm">Terms</a>
+      </nav>
+      <p class="text-xs text-gray-500">© 2025 CompanionJournal. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Smooth scroll for elements with data-scroll
+    document.querySelectorAll('[data-scroll]').forEach(el => {
+      el.addEventListener('click', e => {
+        const target = el.getAttribute('data-scroll');
+        if (target) {
+          const node = document.querySelector(target);
+          if (node) {
+            e.preventDefault();
+            node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // Intersection animations
+    const animated = document.querySelectorAll('[data-animate]');
+    animated.forEach(el => {
+      el.classList.add('opacity-0','translate-y-4','transition','duration-700');
+    });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, { threshold: 0.15 });
+    animated.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
